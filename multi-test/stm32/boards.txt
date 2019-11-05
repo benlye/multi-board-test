@@ -1,0 +1,62 @@
+# Arduino IDE board definition for the STM32-based Multiprotocol TX Module
+# https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+# https://github.com/pascallanger/DIY-Multiprotocol-TX-Module-Boards
+
+####################################################################
+##                    Multi 4-in-1 (STM32F103CB)                  ##
+####################################################################
+
+# Board has 128KB of flash space
+# Max upload size = 128KB - 8KB (bootloader) - 2KB (EEPROM) - 24B (signature) = 120,808
+
+# Board name for the Boards menu
+multistm32f103cb.name=Multi 4-in-1 F103 (STM32duino Core)
+
+multistm32f103cb.build.vid=0x0483
+multistm32f103cb.build.core=stm32duino
+multistm32f103cb.build.board=MULTI_STM32F103_WITH_BOOT=120
+multistm32f103cb.build.product_line=STM32F103xB
+multistm32f103cb.build.variant=stm32duino_f103xx
+multistm32f103cb.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
+multistm32f103cb.build.mcu=cortex-m3
+multistm32f103cb.build.series=STM32F1xx
+multistm32f103cb.build.cmsis_lib_gcc=arm_cortexM3l_math
+multistm32f103cb.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+multistm32f103cb.upload.maximum_size=120808
+multistm32f103cb.upload.maximum_data_size=20480
+
+multistm32f103cb.upload.protocol=maple
+multistm32f103cb.upload.tool=maple_upload
+multistm32f103cb.upload.usbID=1EAF:0003
+multistm32f103cb.upload.altID=2
+multistm32f103cb.build.flash_offset=0x2000
+multistm32f103cb.build.bootloader_flags=-DVECT_TAB_OFFSET={build.flash_offset}
+multistm32f103cb.bootloader.file=Multi4in1/StmMulti4in1.bin
+
+####################################################################
+##                    Multi 4-in-1 (STM32F303CC)                  ##
+####################################################################
+
+# Board has 256KB of flash space
+# Max upload size = 256KB - 8KB (bootloader) - 2KB (EEPROM) - 24B (signature) = 251,880B
+
+# Board name for the Boards menu
+multistm32f303cc.name=Multi 4-in-1 F303 (STM32duino Core)
+
+multistm32f303cc.build.vid=0x0483
+multistm32f303cc.build.core=stm32duino
+multistm32f303cc.build.board=MULTI_STM32F303_WITH_BOOT=120
+multistm32f303cc.build.product_line=STM32F303xC
+multistm32f303cc.build.variant=stm32duino_f303xx
+multistm32f303cc.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
+multistm32f303cc.build.mcu=cortex-m4
+multistm32f303cc.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+multistm32f303cc.build.series=STM32F3xx
+multistm32f303cc.build.cmsis_lib_gcc=arm_cortexM4l_math
+multistm32f303cc.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+multistm32f303cc.upload.maximum_size=251880
+multistm32f303cc.upload.maximum_data_size=40960
+
+multistm32f103cb.build.flash_offset=0x2000
+multistm32f103cb.build.bootloader_flags=-DVECT_TAB_OFFSET={build.flash_offset}
+multistm32f103cb.bootloader.file=Multi4in1/StmMulti4in1.bin
