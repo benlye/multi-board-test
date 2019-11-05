@@ -18,8 +18,8 @@
         },
         "url": "https://github.com/benlye/multi-board-test/raw/master/archives/package_multi_4in1_stm32_board_v2.0.0.zip",
         "archiveFileName": "package_multi_4in1_stm32_board_v2.0.0.zip",
-        "checksum": "SHA-256:F793D6AF0CA5CDDDD9928B890B2AE4A9FFA14BC22BF8ADDB93DB99A8CCB4ABFE",
-        "size": "5281969",
+        "checksum": "SHA-256:64E944F995643284D4183C273B41B0E35FA1DCFA15768376FBA485A4A8504D2C",
+        "size": "5448394",
         "boards": [
           {"name": "Multi 4-in-1 (STM32F1)"},
           {"name": "Multi 4-in-1 (STM32F3)"}
