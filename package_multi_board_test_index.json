@@ -1,0 +1,72 @@
+{
+  "packages": [{
+    "name": "multi4in1-test",
+    "maintainer": "Ben Lye",
+    "websiteURL": "https://github.com/benlye/multi-board-test",
+    "email": "ben@lye.co.nz",
+    "help": {
+      "online": "https://github.com/benlye/multi-board-test"
+    },
+    "platforms": [
+      {
+        "name": "Multi 4-in-1 STM32 Boards (STM32duino Cores)",
+        "architecture": "stm32",
+        "version": "2.0.0",
+        "category": "Contributed",
+        "help": {
+          "online": "https://github.com/benlye/multi-board-test"
+        },
+        "url": "https://github.com/benlye/multi-board-test/raw/master/archives/package_multi_4in1_stm32_board_v2.0.0.zip",
+        "archiveFileName": "package_multi_4in1_stm32_board_v2.0.0.zip",
+        "checksum": "SHA-256:F793D6AF0CA5CDDDD9928B890B2AE4A9FFA14BC22BF8ADDB93DB99A8CCB4ABFE",
+        "size": "5281969",
+        "boards": [
+          {"name": "Multi 4-in-1 (STM32F1)"},
+          {"name": "Multi 4-in-1 (STM32F3)"}
+        ],
+        "toolsDependencies": [{
+          "packager": "multi4in1-test",
+          "name": "arm-none-eabi-gcc",
+          "version": "8.2.1-1.7"
+        }]
+      }
+    ],
+    "tools": [
+      {
+        "name": "arm-none-eabi-gcc",
+        "version": "8.2.1-1.7",
+        "systems":
+        [
+          {
+            "host": "i686-mingw32",
+            "url": "https://github.com/stm32duino/arm-none-eabi-gcc/releases/download/8.2.1-1.7/gcc-arm-none-eabi-8.2.1-1.7-windows.tar.bz2",
+            "archiveFileName": "gcc-arm-none-eabi-8.2.1-1.7-windows.tar.bz2",
+            "checksum": "SHA-256:fe7305b48b92e20d71740da8723e59e89abc2e8e159350e9b302adcedbc2b25c",
+            "size": "117852054"
+          },
+          {
+            "host": "x86_64-apple-darwin",
+            "url": "https://github.com/stm32duino/arm-none-eabi-gcc/releases/download/8.2.1-1.7/gcc-arm-none-eabi-8.2.1-1.7-mac.tar.bz2",
+            "archiveFileName": "gcc-arm-none-eabi-8.2.1-1.7-mac.tar.bz2",
+            "checksum": "SHA-256:a6c0193a02d7cd8e411d438c6461c516d7782776f0c647a0a2168f60068b21b2",
+            "size": "103985447"
+          },
+          {
+            "host": "x86_64-pc-linux-gnu",
+            "url": "https://github.com/stm32duino/arm-none-eabi-gcc/releases/download/8.2.1-1.7/gcc-arm-none-eabi-8.2.1-1.7-linux64.tar.bz2",
+            "archiveFileName": "gcc-arm-none-eabi-8.2.1-1.7-linux64.tar.bz2",
+            "checksum": "SHA-256:509f0358ae2f83612f1120fb63eda5eca3892238f793ae909a5bb1d85db0c1f1",
+            "size": "108286418"
+          },
+          {
+            "host": "i686-pc-linux-gnu",
+            "url": "https://github.com/stm32duino/arm-none-eabi-gcc/releases/download/8.2.1-1.7/gcc-arm-none-eabi-8.2.1-1.7-linux32.tar.bz2",
+            "archiveFileName": "gcc-arm-none-eabi-8.2.1-1.7-linux32.tar.bz2",
+            "checksum": "SHA-256:008fdca0f29da0f71519bb78b088e199f30bdf9090b60a18e5372a6942ae5c7a",
+            "size": "109871000"
+          }
+        ]
+      }
+    ]
+  }]
+}
