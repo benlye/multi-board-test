@@ -2,6 +2,9 @@
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 # https://github.com/pascallanger/DIY-Multiprotocol-TX-Module-Boards
 
+# Additional IDE menu(s)
+menu.debug_option=Debug Option
+
 ####################################################################
 ##                    Multi 4-in-1 (STM32F103CB)                  ##
 ####################################################################
@@ -14,7 +17,7 @@ multistm32f103cb.name=Multi 4-in-1 F103 (STM32duino Core)
 
 multistm32f103cb.build.vid=0x0483
 multistm32f103cb.build.core=stm32duino
-multistm32f103cb.build.board=MULTI_STM32F103_WITH_BOOT=120
+multistm32f103cb.build.board=MULTI_STM32F103_WITH_BOOT=200
 multistm32f103cb.build.product_line=STM32F103xB
 multistm32f103cb.build.variant=stm32duino_f103xx
 multistm32f103cb.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
@@ -30,8 +33,12 @@ multistm32f103cb.upload.tool=maple_upload
 multistm32f103cb.upload.usbID=1EAF:0003
 multistm32f103cb.upload.altID=2
 multistm32f103cb.build.flash_offset=0x2000
+multistm32f103cb.upload.tool=auto_upload_f103
+
+multistm32f103cb.build.flash_offset=0x2000
 multistm32f103cb.build.bootloader_flags=-DVECT_TAB_OFFSET={build.flash_offset}
-multistm32f103cb.bootloader.file=Multi4in1/StmMulti4in1.bin
+multistm32f103cb.bootloader.file=stm32f303/multiboot-f103.bin
+
 
 ####################################################################
 ##                    Multi 4-in-1 (STM32F303CC)                  ##
@@ -45,7 +52,7 @@ multistm32f303cc.name=Multi 4-in-1 F303 (STM32duino Core)
 
 multistm32f303cc.build.vid=0x0483
 multistm32f303cc.build.core=stm32duino
-multistm32f303cc.build.board=MULTI_STM32F303_WITH_BOOT=120
+multistm32f303cc.build.board=MULTI_STM32F303_WITH_BOOT=200
 multistm32f303cc.build.product_line=STM32F303xC
 multistm32f303cc.build.variant=stm32duino_f303xx
 multistm32f303cc.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
@@ -53,10 +60,21 @@ multistm32f303cc.build.mcu=cortex-m4
 multistm32f303cc.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
 multistm32f303cc.build.series=STM32F3xx
 multistm32f303cc.build.cmsis_lib_gcc=arm_cortexM4l_math
-multistm32f303cc.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+multistm32f303cc.build.usb_device_name=Multiprotocol Module
 multistm32f303cc.upload.maximum_size=251880
 multistm32f303cc.upload.maximum_data_size=40960
+multistm32f303cc.upload.protocol=auto_upload_f303
+multistm32f303cc.upload.tool=auto_upload_f303
 
-multistm32f103cb.build.flash_offset=0x2000
-multistm32f103cb.build.bootloader_flags=-DVECT_TAB_OFFSET={build.flash_offset}
-multistm32f103cb.bootloader.file=Multi4in1/StmMulti4in1.bin
+multistm32f303cc.build.flash_offset=0x2000
+multistm32f303cc.build.bootloader_flags=-DVECT_TAB_OFFSET={build.flash_offset}
+multistm32f303cc.bootloader.file=stm32f303/multiboot-f303.bin
+
+## Debug Option menu options
+# No Debugging - default option
+multistm32f303cc.menu.debug_option.none=None
+multistm32f303cc.menu.debug_option.none.build.enable_usb=
+
+# Native USB Debugging - debugging for modules with a native USB port
+multistm32f303cc.menu.debug_option.native=Native USB Debugging
+multistm32f303cc.menu.debug_option.native.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DARDUINO_MULTI_DEBUG

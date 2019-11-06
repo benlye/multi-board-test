@@ -69,7 +69,7 @@ compiler.arm.cmsis.ldflags="-L{runtime.tools.CMSIS-5.5.1.path}/CMSIS/DSP/Lib/GCC
 
 # USB Flags
 # ---------
-build.usb_flags=-DUSBCON {build.usb_speed} -DUSBD_VID={build.vid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT="{build.board}"' -DHAL_PCD_MODULE_ENABLED 
+build.usb_flags=-DUSBCON {build.usb_speed} -DUSBD_VID={build.vid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT="{build.usb_device_name}"' -DHAL_PCD_MODULE_ENABLED 
 
 # Default usb manufacturer will be replaced at compile time using
 # numeric vendor ID if available or by board's specific value.
@@ -157,43 +157,12 @@ recipe.output.save_file=multi-stm.bin
 # -------------------
 
 # Automatically detect upload method (USB or serial)
-tools.auto_upload.cmd=auto_upload
-tools.auto_upload.cmd.windows=auto_upload.bat
-tools.auto_upload.path={runtime.platform.path}/tools/win
-tools.auto_upload.path.macosx={runtime.platform.path}/tools/macosx
-tools.auto_upload.path.linux={runtime.platform.path}/tools/linux
-tools.auto_upload.path.linux64={runtime.platform.path}/tools/linux64    
-tools.auto_upload.upload.params.verbose=-d
-tools.auto_upload.upload.params.quiet=
-tools.auto_upload.upload.pattern="{path}/{cmd}" {serial.port.file} "{build.path}/{build.project_name}.bin" "{runtime.platform.path}/bootloaders/{bootloader.file}"
-
-# Upload using Maple bootloader over DFU
-tools.maple_upload.cmd=maple_upload
-tools.maple_upload.cmd.windows=maple_upload.bat
-tools.maple_upload.path={runtime.platform.path}/tools/win
-tools.maple_upload.path.macosx={runtime.platform.path}/tools/macosx
-tools.maple_upload.path.linux={runtime.platform.path}/tools/linux
-tools.maple_upload.path.linux64={runtime.platform.path}/tools/linux64    
-tools.maple_upload.upload.params.verbose=-d
-tools.maple_upload.upload.params.quiet=
-tools.maple_upload.upload.pattern="{path}/{cmd}" {serial.port.file} {upload.altID} {upload.usbID} "{build.path}/{build.project_name}.bin"
-
-# Upload using stm32flash over the serial port
-tools.serial_upload.cmd=serial_upload
-tools.serial_upload.cmd.windows=serial_upload.bat
-tools.serial_upload.cmd.macosx=serial_upload
-tools.serial_upload.path={runtime.platform.path}/tools/win
-tools.serial_upload.path.macosx={runtime.platform.path}/tools/macosx
-tools.serial_upload.path.linux={runtime.platform.path}/tools/linux
-tools.serial_upload.path.linux64={runtime.platform.path}/tools/linux64
-tools.serial_upload.upload.params.verbose=-d
-tools.serial_upload.upload.params.quiet=n
-tools.serial_upload.upload.pattern="{path}/{cmd}" {serial.port.file} 0x8000000 "{build.path}/{build.project_name}.bin"
-
-tools.serial_upload.erase.params.verbose=
-tools.serial_upload.erase.params.quiet=
-tools.serial_upload.erase.pattern=
-
-tools.serial_upload.bootloader.params.verbose=
-tools.serial_upload.bootloader.params.quiet=
-tools.serial_upload.bootloader.pattern="{path}/{cmd}" {serial.port.file} 0x0 "{runtime.platform.path}/bootloaders/{bootloader.file}"
+tools.auto_upload_f303.cmd=auto_upload_f303
+tools.auto_upload_f303.cmd.windows=auto_upload_f303.bat
+tools.auto_upload_f303.path={runtime.platform.path}/tools/win
+tools.auto_upload_f303.path.macosx={runtime.platform.path}/tools/macosx
+tools.auto_upload_f303.path.linux={runtime.platform.path}/tools/linux
+tools.auto_upload_f303.path.linux64={runtime.platform.path}/tools/linux64    
+tools.auto_upload_f303.upload.params.verbose=-d
+tools.auto_upload_f303.upload.params.quiet=
+tools.auto_upload_f303.upload.pattern="{path}/{cmd}" {serial.port.file} "{build.path}/{build.project_name}.bin" "{runtime.platform.path}/bootloaders/{bootloader.file}"
