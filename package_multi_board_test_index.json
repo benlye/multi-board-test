@@ -9,7 +9,7 @@
     },
     "platforms": [
       {
-        "name": "Multi 4-in-1 STM32 Boards (STM32duino Cores)",
+        "name": "Multi 4-in-1 STM32 Boards (STM32duino Core)",
         "architecture": "stm32",
         "version": "2.0.0",
         "category": "Contributed",
@@ -21,8 +21,8 @@
         "checksum": "SHA-256:64E944F995643284D4183C273B41B0E35FA1DCFA15768376FBA485A4A8504D2C",
         "size": "5448394",
         "boards": [
-          {"name": "Multi 4-in-1 (STM32F1)"},
-          {"name": "Multi 4-in-1 (STM32F3)"}
+          {"name": "Multi 4-in-1 (STM32F103CB)"},
+          {"name": "Multi 4-in-1 (STM32F303CC)"}
         ],
         "toolsDependencies": [{
           "packager": "multi4in1-test",
