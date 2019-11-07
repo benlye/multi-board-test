@@ -156,7 +156,18 @@ recipe.output.save_file=multi-stm.bin
 # Uploader tools
 # -------------------
 
-# Automatically detect upload method (USB or serial)
+# F103 automatically detect upload method (USB or serial)
+tools.auto_upload_f103.cmd=auto_upload
+tools.auto_upload_f103.cmd.windows=auto_upload.bat
+tools.auto_upload_f103.path={runtime.platform.path}/tools/win
+tools.auto_upload_f103.path.macosx={runtime.platform.path}/tools/macosx
+tools.auto_upload_f103.path.linux={runtime.platform.path}/tools/linux
+tools.auto_upload_f103.path.linux64={runtime.platform.path}/tools/linux64    
+tools.auto_upload_f103.upload.params.verbose=-d
+tools.auto_upload_f103.upload.params.quiet=
+tools.auto_upload_f103.upload.pattern="{path}/{cmd}" {serial.port.file} "{build.path}/{build.project_name}.bin" "{runtime.platform.path}/bootloaders/{bootloader.file}"
+
+# F303 automatically detect upload method (DFU or serial)
 tools.auto_upload_f303.cmd=auto_upload_f303
 tools.auto_upload_f303.cmd.windows=auto_upload_f303.bat
 tools.auto_upload_f303.path={runtime.platform.path}/tools/win
