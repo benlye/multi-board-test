@@ -11,14 +11,14 @@
       {
         "name": "Multi 4-in-1 STM32 Boards (STM32duino Core)",
         "architecture": "stm32",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "category": "Contributed",
         "help": {
           "online": "https://github.com/benlye/multi-board-test"
         },
-        "url": "https://github.com/benlye/multi-board-test/raw/master/archives/package_multi_4in1_stm32_board_v2.0.0.zip",
-        "archiveFileName": "package_multi_4in1_stm32_board_v2.0.0.zip",
-        "checksum": "SHA-256:64E944F995643284D4183C273B41B0E35FA1DCFA15768376FBA485A4A8504D2C",
+        "url": "https://github.com/benlye/multi-board-test/raw/master/archives/package_multi_4in1_stm32_board_v2.0.1.zip",
+        "archiveFileName": "package_multi_4in1_stm32_board_v2.0.1.zip",
+        "checksum": "SHA-256:54B64D9362BBDBC4920FA46F3AF2180342D844CBF1F012505CE3709B76468C79",
         "size": "5448394",
         "boards": [
           {"name": "Multi 4-in-1 (STM32F103CB)"},

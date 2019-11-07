@@ -17,7 +17,7 @@ multistm32f103cb.name=Multi 4-in-1 F103 (STM32duino Core)
 
 multistm32f103cb.build.vid=0x0483
 multistm32f103cb.build.core=stm32duino
-multistm32f103cb.build.board=MULTI_STM32F103_WITH_BOOT=200
+multistm32f103cb.build.board=MULTI_STM32F103_WITH_BOOT=201
 multistm32f103cb.build.product_line=STM32F103xB
 multistm32f103cb.build.variant=stm32duino_f103xx
 multistm32f103cb.build.extra_flags=-D{build.product_line} {build.debug_flags} {build.bootloader_flags}
@@ -61,7 +61,7 @@ multistm32f303cc.name=Multi 4-in-1 F303 (STM32duino Core)
 
 multistm32f303cc.build.vid=0x0483
 multistm32f303cc.build.core=stm32duino
-multistm32f303cc.build.board=MULTI_STM32F303_WITH_BOOT=200
+multistm32f303cc.build.board=MULTI_STM32F303_WITH_BOOT=201
 multistm32f303cc.build.product_line=STM32F303xC
 multistm32f303cc.build.variant=stm32duino_f303xx
 multistm32f303cc.build.extra_flags=-D{build.product_line} {build.debug_flags} {build.bootloader_flags}
